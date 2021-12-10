@@ -14,8 +14,10 @@ class CreateMatMateriaTable extends Migration
     public function up()
     {
         Schema::create('mat_materia', function (Blueprint $table) {
-            $table->id();
+            $table->id('mat_id');
+            $table->string('mat_nombre', 100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -14,8 +14,15 @@ class CreateAlmAlumnoTable extends Migration
     public function up()
     {
         Schema::create('alm_alumno', function (Blueprint $table) {
-            $table->id();
+            $table->id('alm_id');
+            $table->string('alm_codigo', 100)->unique();
+            $table->string('alm_nombre', 300);
+            $table->integer('alm_edad', false, true);
+            $table->string('alm_sexo', 100);
+            $table->foreignId('alm_id_grd')->references('grd_id')->on('grd_grado');
+            $table->string('alm_observacion', 300);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

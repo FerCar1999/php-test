@@ -14,8 +14,11 @@ class CreateGrdGradoTable extends Migration
     public function up()
     {
         Schema::create('grd_grado', function (Blueprint $table) {
-            $table->id();
+            $table->id('grd_id');
+            $table->string('grd_nombre',100);
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

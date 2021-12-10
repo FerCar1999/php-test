@@ -14,8 +14,11 @@ class CreateMxgMateriasxgradoTable extends Migration
     public function up()
     {
         Schema::create('mxg_materiasxgrado', function (Blueprint $table) {
-            $table->id();
+            $table->id('mxg_id');
+            $table->foreignId('mxg_id_grd')->references('grd_id')->on('grd_grado');
+            $table->foreignId('mxg_id_mat')->references('mat_id')->on('mat_materia');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
