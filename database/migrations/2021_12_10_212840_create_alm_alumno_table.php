@@ -20,7 +20,7 @@ class CreateAlmAlumnoTable extends Migration
             $table->integer('alm_edad', false, true);
             $table->string('alm_sexo', 100);
             $table->foreignId('alm_id_grd')->references('grd_id')->on('grd_grado');
-            $table->string('alm_observacion', 300);
+            $table->string('alm_observacion', 300)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

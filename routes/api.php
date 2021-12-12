@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\GradoController;
+use App\Http\Controllers\MateriaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::resource('materias', MateriaController::class);
+Route::resource('grados', GradoController::class);
+Route::resource('alumnos', AlumnoController::class);

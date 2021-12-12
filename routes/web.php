@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('materias', 'materia');
+Route::view('materias-alumno', 'materias_alumno');
+Route::view('grados', 'grado');
+Route::view('alumnos', 'alumno');

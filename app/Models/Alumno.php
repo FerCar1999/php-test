@@ -12,6 +12,8 @@ class Alumno extends Model
 
     protected $table = 'alm_alumno';
 
+    protected $primaryKey = 'alm_id';
+
     protected $fillable = ['alm_codigo', 'alm_nombre', 'alm_edad', 'alm_sexo', 'alm_id_grd', 'alm_observacion'];
 
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
